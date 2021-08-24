@@ -1,12 +1,9 @@
-def runFunction = {
-    sh "file2.sh"
-}
 pipeline {
     agent any 
     stages {
         stage('Stage 1') {
             steps {
-                script {runFunction()}
+                sh file2.sh
             }
         }
     }

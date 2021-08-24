@@ -11,8 +11,7 @@ pipeline {
                 PROD1 = """abc
                 def
                 ghi
-                jkl
-                """
+                jkl"""
             }
             steps {
                 script {runScript()}

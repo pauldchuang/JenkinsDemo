@@ -8,10 +8,14 @@ pipeline {
     stages {
         stage('Stage 1') {
             environment{
-                PROD1 = '''"""abc
+                PROD1 = '''
+                """
+                abc
                 def
                 ghi
-                jkl"""'''
+                jkl
+                """
+                '''
             }
             steps {
                 script {runScript()}

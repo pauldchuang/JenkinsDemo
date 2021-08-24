@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
+                sh "chmod +x -R ${env.WORKSPACE}"
                 sh './file2.sh'
             }
         }

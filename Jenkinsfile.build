@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Stage 1') {
             steps {
-                sh "chmod +x -R ${env.WORKSPACE}"
+                sh "chmod +x -R ./file2.sh"
+                sh "chmod +x -R ./file1.sh"
                 sh './file2.sh'
             }
         }

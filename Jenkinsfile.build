@@ -1,5 +1,5 @@
 def runFunction = {
-    sh file2.sh
+    sh "file2.sh"
 }
 pipeline {
     agent any 

@@ -1,12 +1,12 @@
 def runScript = {
     sh "chmod +x ./file2.sh"
     sh "chmod +x ./file1.sh"
-    sh "
+    sh """
         docker run --rm -e PROD1=HELLO \
         -e HTTP_PROXY=http://HELLOWORLD:8080 \
         -e HTTPS_PROXY=http://HELLOWORLD:8080 \
         -c 'sh file2.sh ${env.PROD1} "${env.PROD2}"'
-    "
+    """
 }
 pipeline {
     agent any 
@@ -14,7 +14,7 @@ pipeline {
         stage('Stage 1') {
             environment{
                 PROD1 = 'Hi'
-                PROD2 = '# ARGS "-exclude" "*.htm" # ARGS "-exclude" "*.html"'             
+                PROD2 = '# ARGS \'-exclude\' \'*.htm\' # ARGS \'-exclude\' \'*.html\'' 
             }
             steps {
                 script {runScript()}

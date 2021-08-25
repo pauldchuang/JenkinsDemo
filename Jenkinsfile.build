@@ -14,10 +14,17 @@ pipeline {
         stage('Stage 1') {
             environment{
                 PROD1 = 'Hi'
-                PROD2 = '''abc
-                def
-                ghi
-                jkl'''                
+                PROD2 = """# ARGS '-exclude' '*.htm'
+                        # ARGS '-exclude' '*.html'
+                        # ARGS '-exclude' '*.java'
+                        # ARGS '-exclude' '*.properties'
+                        # ARGS '-exclude' '*.ini'
+                        # ARGS '-exclude' '*.xml'
+                        # ARGS '-exclude' '*.xsd'
+                        # ARGS '-exclude' '*.xmi'
+                        # ARGS '-exclude' '*.wsdd'
+                        # ARGS '-exclude' '*.config'
+                        # ARGS 'PROP'"""              
             }
             steps {
                 script {runScript()}

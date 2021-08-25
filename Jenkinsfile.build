@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Stage 1') {
             environment{
-                PROD1 = 'Hi'
+                PROD1 = "Hi"
                 PROD2 = '''abc
                 def
                 ghi

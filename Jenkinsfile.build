@@ -14,10 +14,10 @@ pipeline {
         stage('Stage 1') {
             environment{
                 PROD1 = 'Hi'
-                PROD2 = '''"""abc
+                PROD2 = ''''''abc
                 def
                 ghi
-                jkl"""'''                
+                jkl''''''                
             }
             steps {
                 script {runScript()}

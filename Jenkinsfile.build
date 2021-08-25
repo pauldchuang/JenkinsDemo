@@ -14,7 +14,7 @@ pipeline {
         stage('Stage 1') {
             environment{
                 PROD1 = 'Hi'
-                PROD2 = '''
+                PROD2 = """
                         # ARGS "-exclude" "*.htm"
                         # ARGS "-exclude" "*.html"
                         # ARGS "-exclude" "*.java"
@@ -26,7 +26,7 @@ pipeline {
                         # ARGS "-exclude" "*.wsdd"
                         # ARGS "-exclude" "*.config"
                         # ARGS "PROP"
-                        '''              
+                        """              
             }
             steps {
                 script {runScript()}

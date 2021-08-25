@@ -1,17 +1,11 @@
 def runScript = {
-    sh """
-        echo "${env.PROD2}" > PROD2.txt        
-    """
-    sh '''
-        PROD2=$(<PROD2.txt)
-    '''
     sh "chmod +x ./file2.sh"
     sh "chmod +x ./file1.sh"
     sh """
         docker run --rm -e PROD1=HELLO \
         -e HTTP_PROXY=http://HELLOWORLD:8080 \
         -e HTTPS_PROXY=http://HELLOWORLD:8080 \
-        -c "sh file2.sh ${env.PROD1} $PROD2 "
+        -c "sh file2.sh ${env.PROD1} ${env.PROD2} "
     """
 }
 pipeline {

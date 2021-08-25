@@ -2,7 +2,7 @@ def runScript = {
     sh "chmod +x ./file2.sh"
     sh "chmod +x ./file1.sh"
     sh """
-    sh ./file2.sh ${env.PROD1}
+    sh ./file2.sh ${env.PROD1} ${env.PROD2}
     """
 }
 pipeline {
@@ -14,6 +14,7 @@ pipeline {
                 def
                 ghi
                 jkl"""'''
+                PROD2 = 'Hi'
             }
             steps {
                 script {runScript()}

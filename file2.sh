@@ -1,4 +1,4 @@
 #!/bin/sh
 ARG="$1"
-echo "$ARG"
+echo "$1"
 echo "$2"
